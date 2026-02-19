@@ -8,7 +8,7 @@ import time
 def limpar_tela():
     os.system('cls' if os.name == 'nt' else 'clear')
 
-
+downloads = os.path.join(os.path.expanduser("~"), "Downloads")
 
 url = input("Inserir url: ")
 global atual
@@ -17,7 +17,7 @@ atual = 0
 pl = playlist(url)
 
 #cria pasta para as musicas
-pasta = os.path.join(r"C:\Users\Yan_k_rocha\Downloads", pl.title)
+pasta = os.path.join(downloads, pl.title)
 os.makedirs(pasta, exist_ok=True)
 
 for video in pl.videos:
